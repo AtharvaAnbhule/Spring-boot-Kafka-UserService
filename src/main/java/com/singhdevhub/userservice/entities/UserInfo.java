@@ -1,24 +1,28 @@
 package com.singhdevhub.userservice.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class UserInfoDto
+@Getter
+@Setter
+public class UserInfo
 {
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Id
     @JsonProperty("user_id")
     @NonNull
     private String userId;
@@ -41,17 +45,5 @@ public class UserInfoDto
 
     @JsonProperty("profile_pic")
     private String profilePic;
-
-    public UserInfo transformToUserInfo(){
-        return new UserInfo(
-                null,
-                userId,
-                firstName,
-                lastName,
-                phoneNumber,
-                email,
-                profilePic
-        );
-    }
 
 }
