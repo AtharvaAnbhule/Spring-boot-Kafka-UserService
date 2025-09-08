@@ -1,4 +1,4 @@
-# User Service – Spring Boot & Apache Kafka  
+# User Service 
 
 ## 📌 Overview  
 This project is a **User Service** built with **Spring Boot** and integrated with **Apache Kafka** for event-driven communication. It demonstrates how to publish and consume user-related events (such as user creation, updates, and deletion) in a scalable and decoupled microservices environment.  
