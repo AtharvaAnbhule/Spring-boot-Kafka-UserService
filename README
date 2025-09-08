@@ -1,57 +1,47 @@
-## User Service – Spring Boot & Apache Kafka
-##📌 Overview
+# User Service – Spring Boot & Apache Kafka  
 
-This project is a User Service built with Spring Boot and integrated with Apache Kafka for event-driven communication. It demonstrates how to publish and consume user-related events (such as user creation, updates, and deletion) in a scalable and decoupled microservices environment.
+## 📌 Overview  
+This project is a **User Service** built with **Spring Boot** and integrated with **Apache Kafka** for event-driven communication. It demonstrates how to publish and consume user-related events (such as user creation, updates, and deletion) in a scalable and decoupled microservices environment.  
 
-##🚀 Features
+## 🚀 Features  
+- Create, update, and delete users via REST APIs  
+- Publish user-related events to Kafka topics  
+- Consume and process events asynchronously from Kafka  
+- Built with Spring Boot and Spring Kafka  
+- Follows clean code and modular microservices architecture  
 
-Create, update, and delete users via REST APIs.
+## 🛠️ Tech Stack  
+- **Backend:** Spring Boot (Java)  
+- **Messaging:** Apache Kafka  
+- **Database (optional):** PostgreSQL / MySQL  
+- **Build Tool:** Maven / Gradle  
+- **Containerization:** Docker (optional)  
 
-Publish user-related events to Kafka topics.
-
-Consume and process events asynchronously from Kafka.
-
-Built with Spring Boot and Spring Kafka.
-
-Follows clean code and modular microservices architecture.
-
-##🛠️ Tech Stack
-
-Backend: Spring Boot (Java)
-
-Messaging: Apache Kafka
-
-Database (optional): PostgreSQL / MySQL (if persistence layer is added)
-
-Build Tool: Maven / Gradle
-
-Containerization: Docker (optional)
-
-##📂 Project Structure
+## 📂 Project Structure  
 user-service/
 │── src/main/java/com/example/userservice/
-│   ├── controller/        # REST controllers
-│   ├── model/             # User entity & DTOs
-│   ├── service/           # Business logic
-│   ├── kafka/             # Kafka producer & consumer configs
-│   └── repository/        # Database interactions (if enabled)
+│ ├── controller/ # REST controllers
+│ ├── model/ # User entity & DTOs
+│ ├── service/ # Business logic
+│ ├── kafka/ # Kafka producer & consumer configs
+│ └── repository/ # Database interactions (if enabled)
 │
 │── src/main/resources/
-│   ├── application.yml    # Spring Boot configs
-│   └── kafka-config.yml   # Kafka configs
+│ ├── application.yml # Spring Boot configs
+│ └── kafka-config.yml # Kafka configs
 │
 │── pom.xml / build.gradle
 
-##⚙️ Setup & Installation
-1️⃣ Prerequisites
 
-Java 17+
+## ⚙️ Setup & Installation  
 
-Maven/Gradle
+### 1️⃣ Prerequisites  
+- Java 17+  
+- Maven/Gradle  
+- Docker (if running Kafka via Docker)  
 
-Docker (if running Kafka via Docker)
-
-2️⃣ Running Kafka (Docker Compose)
+### 2️⃣ Running Kafka (Docker Compose)  
+```yaml
 version: "3"
 services:
   zookeeper:
@@ -89,7 +79,7 @@ PUT	/api/users/{id}	Update a user
 DELETE	/api/users/{id}	Delete a user
 5️⃣ Kafka Topics
 
-user-events → All user-related events published here.
+user-events → All user-related events published here
 
 ✅ Example Event (JSON)
 {
@@ -102,8 +92,8 @@ user-events → All user-related events published here.
 
 📖 Learning Outcomes
 
-Event-driven microservices with Kafka.
+Event-driven microservices with Kafka
 
-Integrating Spring Boot REST APIs with Kafka producers/consumers.
+Integrating Spring Boot REST APIs with Kafka producers/consumers
 
-Hands-on experience with asynchronous communication.
+Hands-on experience with asynchronous communication
