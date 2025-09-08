@@ -1,0 +1,109 @@
+User Service – Spring Boot & Apache Kafka
+📌 Overview
+
+This project is a User Service built with Spring Boot and integrated with Apache Kafka for event-driven communication. It demonstrates how to publish and consume user-related events (such as user creation, updates, and deletion) in a scalable and decoupled microservices environment.
+
+🚀 Features
+
+Create, update, and delete users via REST APIs.
+
+Publish user-related events to Kafka topics.
+
+Consume and process events asynchronously from Kafka.
+
+Built with Spring Boot and Spring Kafka.
+
+Follows clean code and modular microservices architecture.
+
+🛠️ Tech Stack
+
+Backend: Spring Boot (Java)
+
+Messaging: Apache Kafka
+
+Database (optional): PostgreSQL / MySQL (if persistence layer is added)
+
+Build Tool: Maven / Gradle
+
+Containerization: Docker (optional)
+
+📂 Project Structure
+user-service/
+│── src/main/java/com/example/userservice/
+│   ├── controller/        # REST controllers
+│   ├── model/             # User entity & DTOs
+│   ├── service/           # Business logic
+│   ├── kafka/             # Kafka producer & consumer configs
+│   └── repository/        # Database interactions (if enabled)
+│
+│── src/main/resources/
+│   ├── application.yml    # Spring Boot configs
+│   └── kafka-config.yml   # Kafka configs
+│
+│── pom.xml / build.gradle
+
+⚙️ Setup & Installation
+1️⃣ Prerequisites
+
+Java 17+
+
+Maven/Gradle
+
+Docker (if running Kafka via Docker)
+
+2️⃣ Running Kafka (Docker Compose)
+version: "3"
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+
+Start Kafka with:
+
+docker-compose up -d
+
+3️⃣ Running the Application
+# Clone repository
+git clone https://github.com/YourUsername/user-service.git
+cd user-service
+
+# Build and run
+mvn spring-boot:run
+
+4️⃣ API Endpoints
+Method	Endpoint	Description
+POST	/api/users	Create a new user
+GET	/api/users	Get all users
+PUT	/api/users/{id}	Update a user
+DELETE	/api/users/{id}	Delete a user
+5️⃣ Kafka Topics
+
+user-events → All user-related events published here.
+
+✅ Example Event (JSON)
+{
+  "eventType": "USER_CREATED",
+  "userId": "12345",
+  "username": "atharva",
+  "email": "atharva@example.com",
+  "timestamp": "2025-09-08T12:34:56Z"
+}
+
+📖 Learning Outcomes
+
+Event-driven microservices with Kafka.
+
+Integrating Spring Boot REST APIs with Kafka producers/consumers.
+
+Hands-on experience with asynchronous communication.
