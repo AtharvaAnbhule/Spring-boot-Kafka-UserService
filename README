@@ -1,9 +1,9 @@
-User Service – Spring Boot & Apache Kafka
-📌 Overview
+## User Service – Spring Boot & Apache Kafka
+##📌 Overview
 
 This project is a User Service built with Spring Boot and integrated with Apache Kafka for event-driven communication. It demonstrates how to publish and consume user-related events (such as user creation, updates, and deletion) in a scalable and decoupled microservices environment.
 
-🚀 Features
+##🚀 Features
 
 Create, update, and delete users via REST APIs.
 
@@ -15,7 +15,7 @@ Built with Spring Boot and Spring Kafka.
 
 Follows clean code and modular microservices architecture.
 
-🛠️ Tech Stack
+##🛠️ Tech Stack
 
 Backend: Spring Boot (Java)
 
@@ -27,7 +27,7 @@ Build Tool: Maven / Gradle
 
 Containerization: Docker (optional)
 
-📂 Project Structure
+##📂 Project Structure
 user-service/
 │── src/main/java/com/example/userservice/
 │   ├── controller/        # REST controllers
@@ -42,7 +42,7 @@ user-service/
 │
 │── pom.xml / build.gradle
 
-⚙️ Setup & Installation
+##⚙️ Setup & Installation
 1️⃣ Prerequisites
 
 Java 17+
@@ -75,7 +75,7 @@ docker-compose up -d
 
 3️⃣ Running the Application
 # Clone repository
-git clone https://github.com/YourUsername/user-service.git
+git clone https://github.com/AtharvaAnbhule/Spring-boot-Kafka-UserService.git
 cd user-service
 
 # Build and run
